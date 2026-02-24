@@ -48,7 +48,7 @@ class ClientRequestListAPIView(APIView):
     authentication_classes = [AdminJWTAuthentication]
 
     def get(self, request):
-        # Professional tip: order_by ensure karta hai ke naye requests upar ayen
+        
         requests = ClientRequest.objects.all().order_by("-created_at")
         serializer = ClientRequestSerializer(requests, many=True)
         return Response(serializer.data)
