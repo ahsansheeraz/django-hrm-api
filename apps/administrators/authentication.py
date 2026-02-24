@@ -3,9 +3,7 @@ from rest_framework import exceptions
 from .models import Administrator
 
 class AdminJWTAuthentication(JWTAuthentication):
-    """
-    Custom JWTAuthentication for Administrator model
-    """
+     
 
     def get_user(self, validated_token):
         admin_id = validated_token.get("admin_id")
